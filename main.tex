@@ -1,0 +1,60 @@
+% !TeX spellcheck = en_US
+\documentclass[11pt,a4paper,twoside,openright]{article}
+
+\usepackage[utf8]{inputenc}
+%\usepackage[italian]{babel}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{listings}  % Required for insertion of code
+\usepackage{graphicx} % Required to insert images
+\usepackage{textcomp}
+\usepackage{enumerate} % Required for enumerate model
+\usepackage{gensymb} %Required for degree symbol which is made ^{\circ}
+
+%\usepackage [ Lenny ]{fncychap}
+\usepackage{longtable} % Required to put long tables
+
+\lstset{ % Frame for Matlab code
+	numbers=left, 
+	numberstyle=\small, 
+	numbersep=8pt, 
+	frame = single, 
+	language=Matlab, 
+	framexleftmargin=19pt,
+	breaklines}
+
+\pagestyle{plain}
+
+\graphicspath{{img/}} % Set graphics directory
+
+\def\permille{\ensuremath{{}^\text{o}\mkern-5mu/\mkern-3mu_\text{oo}}} % Add symbol of per mille
+\newcommand{\parallelsum}{\mathbin{\!/\mkern-5mu/\!}} % Fix parallel symbol inclination
+
+%\makeindex
+
+\begin{document}
+
+
+
+\title{Assignment no.4}
+\author{Amedeo Bertone (xxxxxx)\\Davide Botteon (239595)\\Enrico Maria Renzi (xxxxxx)\\
+	01NVSOQ -- Advanced Antenna Engineering}
+%\date{December 10, 2017}
+\maketitle
+
+\input{./TeX_files/introduction}
+\input{./TeX_files/problem1}
+\input{./TeX_files/problem2}
+\input{./TeX_files/problem3}
+
+\section{EXAMPLE, PLEASE DELETE ME}
+following an example of frame for Matlab
+\begin{lstlisting}
+% ** preset of all the variables **
+alpha=linspace(0,2*pi,10000);
+\end{lstlisting}
+\paragraph{things to write} are divided in paragraphs
+\subparagraph{or subparagraphs} like this
+\end{document}
