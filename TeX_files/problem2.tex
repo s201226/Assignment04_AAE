@@ -96,3 +96,11 @@ In order to have a visual impact of what the schematic is translated into in ter
 \caption{How our BFN looks like}
 \label{layout}
 \end{figure}
+
+\par\medskip
+\noindent
+Unfortunately, if till this point the simulations seemed to be very encouraging, we realized that when trying to transfer the design on \textit{CST Microwave Studio} they were not so good: the resonance was not as precise as we'd have expected and neither was the tapering. Furthermore, if using the optimizer turned out to be a very useful tool when using \textit{Design Studio}, things are not so easy in \textit{Microwave Studio}, where the high density of the mesh needed in order to obtain reliable results makes the simulation time very long. Due to these reasons we began from scratch, trying to build up the single components of the BFN separately. As previously described the power splitters seem to work on their own, giving the correct power ratio and phasing, but even in this case we were not able to put them together obtaining a satisfactory result, nor we managed to optimize the results on the base of what previously obtained. The reasons are multiple: long simulation time if the mesh is dense and low reliability if, with the aim of reducing the simulation time to allow for optimization, one uses a larger meshgrid, very high precision of the optimizer, which specifies a lot of digits (which has no sense if one thinks about the specifications one should give the producer in order to print the antenna). Furthermore: every curve introduces a non ideality and even the simple lines are not easy to tune all together to the correct impedance value. Simulations were carried out both with discrete face ports (whose reference impedance can be specified by the user) and with waveguide ports, but in both case we were unable to tune the BFN perfectly.
+
+\par\medskip
+\noindent
+We also tried to simulate the behavior of the BFN when attached to the patches, but, since the tapering was not the good one we had hoped for, the SLL wasn't completely tuned on the -20 dB level either. Good notes are the fact that the radiated field happened to be broadside, meaning that the phasing, at least, was correct, and that the resonce frequency, even if not perfect, happened to be more precise in this case.
