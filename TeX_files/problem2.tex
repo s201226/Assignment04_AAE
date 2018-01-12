@@ -1,5 +1,7 @@
 \section{Problem no.2}
 
+\subsection{Simulation with \textit{Design Studio}}
+
 In order to verify and optimize the design of the BFN we decided to use \textit{CST Design Studio}, one of the various tools offered by \textit{CST Studio Suite}, which allows the user to design a microstrip network via schematic, to optimize it through the embedded optimization tool and then to create a layout of the whole project that can easily be exported in \textit{CST Microwave Studio} for further simulations.
 
 \par\medskip
@@ -97,8 +99,8 @@ In order to have a visual impact of what the schematic is translated into in ter
 \label{layout}
 \end{figure}
 
-\par\medskip
-\noindent
+\subsection{Simulation with \textit{Microwave Studio}}
+
 Unfortunately, if till this point the simulations seemed to be very encouraging, we realized that when trying to transfer the design on \textit{CST Microwave Studio} they were not so good: the resonance was not as precise as we'd have expected and neither was the tapering. Furthermore, if using the optimizer turned out to be a very useful tool when using \textit{Design Studio}, things are not so easy in \textit{Microwave Studio}, where the high density of the mesh needed in order to obtain reliable results makes the simulation time very long. Due to these reasons we began from scratch, trying to build up the single components of the BFN separately. As previously described the power splitters seem to work on their own, giving the correct power ratio and phasing, but even in this case we were not able to put them together obtaining a satisfactory result, nor we managed to optimize the results on the base of what previously obtained. The reasons are multiple: long simulation time if the mesh is dense and low reliability if, with the aim of reducing the simulation time to allow for optimization, one uses a larger meshgrid, very high precision of the optimizer, which specifies a lot of digits (which has no sense if one thinks about the specifications one should give the producer in order to print the antenna). Furthermore: every curve introduces a non ideality and even the simple lines are not easy to tune all together to the correct impedance value. Simulations were carried out both with discrete face ports (whose reference impedance can be specified by the user) and with waveguide ports, but in both case we were unable to tune the BFN perfectly.
 
 \par\medskip
