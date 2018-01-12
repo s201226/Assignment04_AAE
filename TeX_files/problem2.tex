@@ -101,12 +101,11 @@ In order to have a visual impact of what the schematic is translated into in ter
 
 \subsection{Simulation with \textit{Microwave Studio}}
 
-Unfortunately, if till this point the simulations seemed to be very encouraging, we realized that when trying to transfer the design on \textit{CST Microwave Studio} they were not so good: the resonance was not as precise as we'd have expected and neither was the tapering. Furthermore, if using the optimizer turned out to be a very useful tool when using \textit{Design Studio}, things are not so easy in \textit{Microwave Studio}, where the high density of the mesh needed in order to obtain reliable results makes the simulation time very long. Due to these reasons we began from scratch, trying to build up the single components of the BFN separately. As previously described the power splitters seem to work on their own, giving the correct power ratio and phasing, but even in this case we were not able to put them together obtaining a satisfactory result, nor we managed to optimize the results on the base of what previously obtained. The reasons are multiple: long simulation time if the mesh is dense and low reliability if, with the aim of reducing the simulation time to allow for optimization, one uses a larger meshgrid, very high precision of the optimizer, which specifies a lot of digits (which has no sense if one thinks about the specifications one should give the producer in order to print the antenna). Furthermore: every curve introduces a non ideality and even the simple lines are not easy to tune all together to the correct impedance value. Simulations were carried out both with discrete face ports (whose reference impedance can be specified by the user) and with waveguide ports, but in both case we were unable to tune the BFN perfectly.
-
+Unfortunately, if till this point the simulations seemed to be very encouraging, we realized that when trying to transfer the design on \textit{CST Microwave Studio} they were not so good: the resonance was not as precise as we'd have expected and neither was the tapering. Furthermore, if using the optimizer turned out to be a very useful tool when using \textit{Design Studio}, things are not so easy in \textit{Microwave Studio}, where the high density of the mesh needed in order to obtain reliable results makes the simulation time very long. Due to these reasons we began from scratch, trying to build up the single components of the BFN separately. As previously described the power splitters seem to work on their own, giving the correct power ratio and phasing, but even in this case we were not able to put them together obtaining immediately a satisfactory result, nor we managed to optimize the results on the base of what previously obtained as well as we did in \textit{Design Studio}. The reasons are multiple: long simulation time (as already mentioned) if the mesh is dense and low reliability if, with the aim of reducing the simulation time to allow for optimization, one uses a larger meshgrid, very high precision of the optimizer, which specifies a lot of digits (which has no sense if one thinks about the specifications one should give the producer in order to print the antenna). Furthermore: every curve introduces a non ideality and even the simple lines are not easy to tune all together to the correct impedance value. Simulations were carried out both with discrete face ports (whose reference impedance can be specified by the user) and with waveguide ports, with which we were finally able to obtain an acceptable result, even if not perfect as one would like.
 \par\medskip
 \noindent
 
-In the following figures: the globally best result we obtained in \textit{Microwave Studio}, not bad in terms of tapering, but not precise at all in terms of resonance frequency:
+In the following figures: the globally best result we obtained in \textit{Microwave Studio}, resonating at the right frequency even if the shape of the curve is not exceptional and with acceptable tapering:
 
 \begin{figure}[H]
 \centering
@@ -117,30 +116,28 @@ In the following figures: the globally best result we obtained in \textit{Microw
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.35]{2151a.png}
-\caption{S\textsubscript{21} parameter, coinciding with S\textsubscript{51}}
+\includegraphics[scale=0.35]{cacca.jpg}
+\caption{amplitude of the important parameters}
 \label{a}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.35]{3141a.png}
-\caption{S\textsubscript{31} parameter, coinciding with S\textsubscript{41}}
+\includegraphics[scale=0.35]{cacca1.jpg}
+\caption{phase of the important parameters}
 \label{b}
 \end{figure}
 
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.35]{2151p.png}
-\caption{S\textsubscript{21} parameter (phase), coinciding with S\textsubscript{51}}
-\label{c}
-\end{figure}
+
+\par\medskip
+\noindent
+It is important to notice that S\textsubscript{21} coincides with S\textsubscript{51}, while S\textsubscript{31} coincides with S\textsubscript{41}. This was predictable, but it is also due to the fact that we imposed as a boundary condition a simmetry plane (xy) for the magnetic field, since the simmetry of the system allows for it: the field lines are closed around the microstrip at the input port and the tangent camponent is null in the xy plane.
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.35]{3141p.png}
-\caption{S\textsubscript{31} parameter (phase), coinciding with S\textsubscript{41}}
-\label{d}
+\includegraphics[scale=0.35]{sonostanco.jpg}
+\caption{simmetry plane adopted}
+\label{c}
 \end{figure}
 
 \par\medskip
